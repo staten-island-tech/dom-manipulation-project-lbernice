@@ -12,7 +12,7 @@ DOMSelectors = {
     // store all related code for selecting elements here
     form: document.querySelector("#form"),
     firstName: document.querySelector(".first-name"),
-    h2s: document.querySelector("h2"),
+    h2s: document.querySelectorAll("h2"),
 };
 DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
