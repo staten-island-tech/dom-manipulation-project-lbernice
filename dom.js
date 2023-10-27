@@ -16,9 +16,31 @@
 // });
 
 DOMSelectors = {
-    form:document.querySelector("#form"),
-    starType: document.querySelector(".star-type"),
-    starName: document.querySelector(".star-name"),
-    starMonth: document.querySelector(".star-month"),
-    image: document.querySelector(".image")
+    form: document.querySelector("#form"),
+    type: document.querySelector("#star-type"),
+    name: document.querySelector("#star-name"),
+    image: document.querySelector("#image"),
+    card: document.querySelector("#card"),
+};
+DOMSelectors.form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    enter();
+});
+
+function enter() {
+    type = DOMSelectors.type.value;
+    star = DOMSelectors.name.value;
+    image = DOMSelectors.image.value;
+    DOMSelectors.card.insertAdjacentHTML(
+    "afterbegin",
+    `<div class="card">
+        <h3 class="name">${star}</h3>
+        <h3 class="type">${type}</h3>
+        <img class="image" src="${image}">
+        <button class="remove">Remove</button>
+    </div>`
+      );
+    }
+function remove() {
+    
 }
