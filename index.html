@@ -3,10 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <title>Dom Manipulation Project</title>
 </head>
 <body>
-    <!-- <form action="" id="form">
+ <!-- <form action="" id="form">
         <label for="firstName">Name:</label>
         <input type="text" name="firstName" id="form-first" class="first-name"/>
         <input type="submit" value="Click here" />
@@ -17,27 +20,33 @@
     <h2>jdfjffsjd</h2>
     <h2>jdfjffsjd</h2>
     <h2>jdfjffsjd</h2> -->
-<form action="" id="form">
-<h1>The Constellations</h1>
-<div class="star">
-    <label for="star-name">Name:</label>
-    <input type="text" name="star-name" id="star-name">
-</div>
-            
-<div class="star">
-    <label for="star-type">Constellation Type: </label>
-    <input type="text" name="star-type" id="star-type">
-</div>
-            
-<div class="star">
-    <label for="image">Enter Image: </label>
-    <input type="text" name="image" id="image">
-</div>
-<input type="submit" value="Click here" id="submit">
+  <form id="form">
+    <div id="card" class="card">
+        <h1> Types of Candy </h1>
 
-</form>
-<div id="card"></div>
+        <label for="candy"> Candy Name: </label>
+        <input type="text" id="candy">
+    </div>
 
-    <script src="dom.js"></script>
+    <div id="card" class="card">
+        <label for="type"> Type: </label>
+        <input type="text" id="type">
+    </div>
+
+    <div id="card" class="card">
+        <label for="color"> Color: </label>
+        <input type="text" id="color"> 
+    </div>
+
+    <div id="card" class="card">
+        <input type="submit" value="Click here" id="submit">
+    </div>
+    
+  </form>
+
+  <div id="card-output"></div>
+
 </body>
+<script src="dom.js"></script>
+
 </html>

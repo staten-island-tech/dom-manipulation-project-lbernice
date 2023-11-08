@@ -16,31 +16,50 @@
 // });
 
 DOMSelectors = {
-    form: document.querySelector("#form"),
-    type: document.querySelector("#star-type"),
-    name: document.querySelector("#star-name"),
-    image: document.querySelector("#image"),
-    card: document.querySelector("#card"),
-};
-DOMSelectors.form.addEventListener("submit", function (event) {
+    form: document.getElementById("form"),
+    candy: document.getElementById("candy"),
+    type: document.getElementById("type"),
+    color: document.getElementById("color"),
+    image: document.getElementById("image"),
+    card: document.getElementById("card"),
+    output: document.getElementById("card-output"),
+  };
+  
+  DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
     enter();
-});
-
-function enter() {
+    clear();
+    remove();
+  });
+  
+  function enter() {
+    candy = DOMSelectors.candy.value;
     type = DOMSelectors.type.value;
-    star = DOMSelectors.name.value;
-    image = DOMSelectors.image.value;
-    DOMSelectors.card.insertAdjacentHTML(
-    "afterbegin",
-    `<div class="card">
-        <h3 class="name">${star}</h3>
-        <h3 class="type">${type}</h3>
-        <img class="image" src="${image}">
-        <button class="remove">Remove</button>
-    </div>`
-      );
-    }
-function remove() {
-    
+    color = DOMSelectors.color.value;
+  
+    DOMSelectors.output.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="output">
+            <h2 class="description" > ${candy}: ${type} ${color}</h2>
+            <img class="image" src="https://t4.ftcdn.net/jpg/01/35/81/99/360_F_135819993_bSNjZzDBWQwDc8nVhUXQZ3WtMEvPzz4R.jpg">
+            <div> <button class="button"> Remove </button> </div>
+      </div>`
+    );
+  }
+  
+  
+  function remove() {
+    const buttons = document.querySelectorAll(".button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", function() {
+        button.parentElement.parentElement.remove();
+      });
+    });
+  }
+  
+
+function clear() {
+    DOMSelectors.candy.value = "";
+    DOMSelectors.type.value = "";
+    DOMSelectors.color.value = "";
 }
