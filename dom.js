@@ -19,7 +19,6 @@ DOMSelectors = {
     form: document.getElementById("form"),
     candy: document.getElementById("candy"),
     type: document.getElementById("type"),
-    color: document.getElementById("color"),
     image: document.getElementById("image"),
     card: document.getElementById("card"),
     output: document.getElementById("card-output"),
@@ -35,13 +34,13 @@ DOMSelectors = {
   function enter() {
     candy = DOMSelectors.candy.value;
     type = DOMSelectors.type.value;
-    color = DOMSelectors.color.value;
+    image = DOMSelectors.image.value;
   
     DOMSelectors.output.insertAdjacentHTML(
       "afterbegin",
       `<div class="output">
-            <h3> ${candy} ${type} ${color}</h3>
-            <img src= "${DOMSelectors.image.value}" alt="image" class="card-image">
+            <h3> ${candy} ${type}</h3>
+            <img src= "${DOMSelectors.image.value}" alt="image" class="image">
             <div> <button class="button"> Remove </button> </div>
       </div>`
     );
@@ -61,5 +60,5 @@ DOMSelectors = {
 function clear() {
     DOMSelectors.candy.value = "";
     DOMSelectors.type.value = "";
-    DOMSelectors.color.value = "";
+    DOMSelectors.image.value = "";
 }
