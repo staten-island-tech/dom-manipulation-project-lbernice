@@ -41,7 +41,7 @@ DOMSelectors = {
       "afterbegin",
       `<div class="output">
             <h3> ${candy} ${type} ${color}</h3>
-            <img class="image" src="https://t4.ftcdn.net/jpg/01/35/81/99/360_F_135819993_bSNjZzDBWQwDc8nVhUXQZ3WtMEvPzz4R.jpg">
+            <img src= "${DOMSelectors.image.value}" alt="image" class="card-image">
             <div> <button class="button"> Remove </button> </div>
       </div>`
     );
